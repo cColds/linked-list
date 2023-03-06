@@ -63,6 +63,10 @@ class LinkList {
 
 		return temp;
 	}
+
+	pop() {
+		delete this.getTail();
+	}
 }
 
 class Node {
@@ -77,4 +81,5 @@ node.append("Bob");
 node.append("Cydia");
 node.append("David");
 
-console.log(node.at(2));
+node.pop();
+console.log(node);
