@@ -39,6 +39,18 @@ class LinkList {
 	getHead() {
 		return this.head;
 	}
+
+	getTail() {
+		if (this.head == null) return null;
+
+		let temp = this.head;
+
+		while (temp.nextNode != null) {
+			temp = temp.nextNode;
+		}
+
+		return temp.nextNode;
+	}
 }
 
 class Node {
@@ -48,5 +60,5 @@ class Node {
 }
 
 const node = new LinkList();
-node.prepend("jimmy");
-console.log(node.getHead());
+node.append("fj");
+console.log(node.getTail());
