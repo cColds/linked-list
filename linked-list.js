@@ -36,9 +36,9 @@ class LinkList {
 		return this.head == null ? 0 : i;
 	}
 
-	// head() {
-	// 	return this.head;
-	// }
+	getHead() {
+		return this.head;
+	}
 }
 
 class Node {
@@ -48,7 +48,5 @@ class Node {
 }
 
 const node = new LinkList();
-node.prepend("jim");
-node.append("aaa");
-node.prepend("ego");
-console.log(node);
+node.prepend("jimmy");
+console.log(node.getHead());
