@@ -51,6 +51,18 @@ class LinkList {
 
 		return temp.nextNode;
 	}
+
+	at(index) {
+		if (this.head == null || index < 0 || !Number.isInteger(index))
+			return null;
+
+		let temp = this.head;
+		while (index--) {
+			temp = temp.nextNode;
+		}
+
+		return temp;
+	}
 }
 
 class Node {
@@ -60,5 +72,9 @@ class Node {
 }
 
 const node = new LinkList();
-node.append("fj");
-console.log(node.getTail());
+node.append("Arthur");
+node.append("Bob");
+node.append("Cydia");
+node.append("David");
+
+console.log(node.at(2));
