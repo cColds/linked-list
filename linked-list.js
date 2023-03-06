@@ -18,12 +18,27 @@ class LinkList {
 	}
 
 	prepend(value) {
-		const node = new Node(value, this.head?.nextNode);
+		const newHead = new Node(value, this.head?.nextNode);
 		const oldHead = this.head;
-		this.head = null;
-		this.head = node;
+		this.head = newHead;
 		this.head.nextNode = oldHead;
 	}
+
+	size() {
+		let i = 1;
+		let temp = this.head;
+
+		while (temp?.nextNode != null) {
+			temp = temp.nextNode;
+			i++;
+		}
+
+		return this.head == null ? 0 : i;
+	}
+
+	// head() {
+	// 	return this.head;
+	// }
 }
 
 class Node {
@@ -33,3 +48,7 @@ class Node {
 }
 
 const node = new LinkList();
+node.prepend("jim");
+node.append("aaa");
+node.prepend("ego");
+console.log(node);
