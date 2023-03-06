@@ -16,6 +16,14 @@ class LinkList {
 		}
 		temp.nextNode = node;
 	}
+
+	prepend(value) {
+		const node = new Node(value, this.head?.nextNode);
+		const oldHead = this.head;
+		this.head = null;
+		this.head = node;
+		this.head.nextNode = oldHead;
+	}
 }
 
 class Node {
@@ -25,9 +33,3 @@ class Node {
 }
 
 const node = new LinkList();
-node.append("Jimmy");
-node.append("Bobby");
-node.append("Samuel");
-node.append("Sarah");
-
-console.log(node.head.nextNode);
