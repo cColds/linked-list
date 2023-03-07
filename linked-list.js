@@ -78,6 +78,20 @@ class LinkList {
 
 		return temp?.value === value;
 	}
+
+	find(value) {
+		if (value == null) return null;
+
+		let temp = this.head;
+		let i = 0;
+
+		while (temp?.value != value && temp?.value != null) {
+			temp = temp.nextNode;
+			i++;
+		}
+
+		return temp?.value === value ? i : null;
+	}
 }
 
 class Node {
@@ -91,6 +105,7 @@ node.append("Arthur");
 node.append("Sheesh");
 node.append("Bob");
 
-console.log(node.contains("Arthur"));
-console.log(node.contains("Sheesh"));
-console.log(node.contains("Bob"));
+console.log(node.find("Arthur"));
+console.log(node.find("Sheesh"));
+console.log(node.find("Bob"));
+console.log(node.find());
