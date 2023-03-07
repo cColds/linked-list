@@ -92,6 +92,20 @@ class LinkList {
 
 		return temp?.value === value ? i : null;
 	}
+
+	toString() {
+		if (this.head == null) return "null";
+
+		let temp = this.head;
+		let string = "";
+
+		while (temp != null) {
+			string += `( ${temp.value} ) -> `;
+			temp = temp.nextNode;
+		}
+
+		return (string += "null");
+	}
 }
 
 class Node {
@@ -101,11 +115,5 @@ class Node {
 }
 
 const node = new LinkList();
-node.append("Arthur");
-node.append("Sheesh");
-node.append("Bob");
 
-console.log(node.find("Arthur"));
-console.log(node.find("Sheesh"));
-console.log(node.find("Bob"));
-console.log(node.find());
+console.log(node.toString());
