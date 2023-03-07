@@ -1,4 +1,4 @@
-class LinkList {
+class LinkedList {
 	constructor() {
 		this.head = null;
 	}
@@ -154,7 +154,7 @@ class Node {
 	}
 }
 
-const node = new LinkList();
+const node = new LinkedList();
 node.append("Item 1");
 node.append("Item 2");
 node.append("Item 3");
