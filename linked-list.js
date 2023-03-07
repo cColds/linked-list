@@ -67,6 +67,17 @@ class LinkList {
 	pop() {
 		delete this.getTail();
 	}
+
+	contains(value) {
+		if (this.head.value == null) return false;
+
+		let temp = this.head;
+		while (temp?.value != value && temp?.value != null) {
+			temp = temp.nextNode;
+		}
+
+		return temp?.value === value;
+	}
 }
 
 class Node {
@@ -77,9 +88,9 @@ class Node {
 
 const node = new LinkList();
 node.append("Arthur");
+node.append("Sheesh");
 node.append("Bob");
-node.append("Cydia");
-node.append("David");
 
-node.pop();
-console.log(node);
+console.log(node.contains("Arthur"));
+console.log(node.contains("Sheesh"));
+console.log(node.contains("Bob"));
