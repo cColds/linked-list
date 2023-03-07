@@ -106,6 +106,27 @@ class LinkList {
 
 		return (string += "null");
 	}
+
+	insertAt(value, index) {
+		const insertNewNode = new Node(value);
+		let temp = this.head;
+		if (index === 0) {
+			this.prepend(value);
+			return;
+		}
+		if (index < 0) return;
+
+		index -= 1;
+
+		while (index--) {
+			temp = temp?.nextNode;
+		}
+		if (!temp?.nextNode) return;
+
+		const old = temp.nextNode;
+		temp.nextNode = insertNewNode;
+		temp.nextNode.nextNode = old;
+	}
 }
 
 class Node {
@@ -115,5 +136,9 @@ class Node {
 }
 
 const node = new LinkList();
-
-console.log(node.toString());
+node.append("Item 1");
+node.append("Item 2");
+node.append("Item 3");
+node.append("Item 4");
+node.insertAt("INSERTING", -2);
+console.dir(node, { depth: null });
