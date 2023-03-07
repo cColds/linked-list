@@ -127,6 +127,25 @@ class LinkList {
 		temp.nextNode = insertNewNode;
 		temp.nextNode.nextNode = old;
 	}
+
+	removeAt(index) {
+		let temp = this.head;
+
+		if (index === 0) {
+			this.head = this.head.nextNode;
+		}
+		if (index < 1) return;
+
+		index -= 1;
+
+		while (index--) {
+			temp = temp?.nextNode;
+		}
+		if (!temp?.nextNode) return;
+
+		let old = temp?.nextNode?.nextNode;
+		temp.nextNode = old;
+	}
 }
 
 class Node {
@@ -140,5 +159,6 @@ node.append("Item 1");
 node.append("Item 2");
 node.append("Item 3");
 node.append("Item 4");
-node.insertAt("INSERTING", -2);
+
+node.removeAt(50);
 console.dir(node, { depth: null });
