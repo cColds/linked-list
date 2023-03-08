@@ -49,7 +49,7 @@ class LinkedList {
 			temp = temp.nextNode;
 		}
 
-		return temp.nextNode;
+		return temp;
 	}
 
 	at(index) {
@@ -165,6 +165,7 @@ console.log(node.size()); // 3
 console.log(node.getHead());
 
 console.log(node.getTail());
+console.log("f", node);
 node.at(1);
 node.pop();
 console.log("contains", node.contains("Append Item 2")); // true
