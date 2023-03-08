@@ -65,7 +65,7 @@ class LinkedList {
 	}
 
 	pop() {
-		delete this.getTail();
+		return delete this.getTail();
 	}
 
 	contains(value) {
@@ -155,10 +155,22 @@ class Node {
 }
 
 const node = new LinkedList();
-node.append("Item 1");
-node.append("Item 2");
-node.append("Item 3");
-node.append("Item 4");
 
-node.removeAt(50);
+node.append("Append Item 1");
+node.append("Append Item 2");
+
+node.prepend("Prepend Item 1");
+
+console.log(node.size()); // 3
+console.log(node.getHead());
+
+console.log(node.getTail());
+node.at(1);
+node.pop();
+console.log("contains", node.contains("Append Item 2")); // true
+console.log("find", node.find("Prepend Item 1")); // 0
+console.log("toString", node.toString()); // ( Prepend Item 1 ) -> ( Append Item 1 ) -> ( Append Item 2 ) -> null
+node.insertAt(4);
+node.removeAt(1);
+
 console.dir(node, { depth: null });
