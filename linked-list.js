@@ -162,16 +162,14 @@ node.append("Append Item 2");
 node.prepend("Prepend Item 1");
 
 console.log(node.size()); // 3
-console.log(node.getHead());
-
-console.log(node.getTail());
-console.log("f", node);
-node.at(1);
+console.log(node.getHead()); // { value: 'Prepend Item 1',  nextNode: {value: 'Append Item 1', nextNode: { value: 'Append Item 2', nextNode: null }}}
+console.log(node.getTail()); // { value: 'Append Item 2', nextNode: null }
+console.log(node.at(1)); // { value: 'Append Item 1',  nextNode: { value: 'Append Item 2', nextNode: null }}
 node.pop();
 console.log("contains", node.contains("Append Item 2")); // true
 console.log("find", node.find("Prepend Item 1")); // 0
 console.log("toString", node.toString()); // ( Prepend Item 1 ) -> ( Append Item 1 ) -> ( Append Item 2 ) -> null
-node.insertAt(4);
+node.insertAt("Jimmy", 2);
 node.removeAt(1);
 
 console.dir(node, { depth: null });
